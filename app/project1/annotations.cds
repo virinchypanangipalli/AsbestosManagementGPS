@@ -66,6 +66,7 @@ annotate service.SiteWithSearchCriteria with @(
                 Value : analysedDate,
                 Label : 'Analysed Date',
             },
+
     ],
     UI.SelectionFields : [
         functionalLocationNo,
@@ -86,6 +87,7 @@ annotate service.SiteWithSearchCriteria with @(
             Value : siteDescription,
         },
     },
+
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
         Data : [

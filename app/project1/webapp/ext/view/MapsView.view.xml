@@ -1,0 +1,37 @@
+<mvc:View
+    controllerName="project1.ext.controller.MapsController"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+    
+    <Page id="idMapsPage" title="Asbestos Management Map" showNavButton="true" navButtonPress="onPageNavButtonPress">
+        <content>
+            <l:VerticalLayout id="idMainVerticalLayout" width="100%">
+                <l:content>
+                    <!-- Map Legend -->
+                    <Panel id="idLegendPanel" headerText="Map Legend" class="sapUiSmallMargin">
+                        <HBox id="idLegendHBox" alignItems="Center" justifyContent="Start">
+                            <VBox id="idSiteLegendVBox" class="sapUiTinyMarginEnd">
+                                <core:Icon id="idSiteIcon" src="sap-icon://circle" color="#0066cc" size="1.5rem"/>
+                                <Text id="idFunctionalLocationsText" text="Functional Locations" class="sapUiTinyMarginTop"/>
+                            </VBox>
+                            <VBox id="idSurveyLegendVBox" class="sapUiTinyMarginEnd">
+                                <core:Icon id="idSurveyIcon" src="sap-icon://circle" color="#ff6600" size="1.5rem"/>
+                                <Text id="idAsbestosSurveysText" text="Asbestos Surveys" class="sapUiTinyMarginTop"/>
+                            </VBox>
+                        </HBox>
+                    </Panel>
+                    
+                    <!-- Map Container -->
+                    <Panel id="idMapPanel" headerText="Interactive Map" class="sapUiSmallMargin">
+                        <content>
+                            <core:HTML id="idLtdivIdmapContainerStylewidthHeightPxgtltdivgtHTML" content="&lt;div id='mapContainer' style='width: 100%; height: 600px;'&gt;&lt;/div&gt;"/>
+                        </content>
+                    </Panel>
+                </l:content>
+            </l:VerticalLayout>
+        </content>
+    </Page>
+</mvc:View>

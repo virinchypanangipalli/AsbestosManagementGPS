@@ -6,6 +6,11 @@ sap.ui.define(
         return Component.extend("project1.Component", {
             metadata: {
                 manifest: "json"
+            },
+            
+            onShowMap: function (oEvent) {
+                var oRouter = this.getRouter();
+                oRouter.navTo("MapsView");
             }
         });
     }

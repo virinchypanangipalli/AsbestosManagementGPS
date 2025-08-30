@@ -49,7 +49,8 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.fe.templates": {}
+        "sap.fe.templates": {},
+        "sap.ui.layout": {}
       }
     },
     "contentDensities": {
@@ -102,6 +103,11 @@
           "pattern": "AsbestosSurvey({key}):?query:",
           "name": "AsbestosSurveyObjectPage",
           "target": "AsbestosSurveyObjectPage"
+        },
+        {
+          "pattern": "Maps:?query:",
+          "name": "MapsView",
+          "target": "MapsView"
         }
       ],
       "targets": {
@@ -147,7 +153,8 @@
               },
               "initialLoad": "Enabled"
             }
-          }
+          },
+          "controllerName": "project1.ext.controller.SiteWithSearchCriteriaList"
         },
         "SiteWithSearchCriteriaObjectPage": {
           "type": "Component",
@@ -169,13 +176,21 @@
                         "placement": "After",
                         "anchor": "DeleteAction"
                       }
+                    },
+                    "ShowMap": {
+                      "press": "onShowMap",
+                      "visible": true,
+                      "enabled": true,
+                      "text": "Show Map",
+                      "icon": "sap-icon://map"
                     }
                   }
                 }
               },
               "showRelatedApps": false
             }
-          }
+          },
+          "controllerName": "project1.ext.controller.SiteWithSearchCriteriaList"
         },
         "AsbestosSurveyList": {
           "type": "Component",
@@ -217,6 +232,16 @@
               "editableHeaderContent": false,
               "contextPath": "/AsbestosSurvey",
               "showRelatedApps": false
+            }
+          }
+        },
+        "MapsView": {
+          "type": "Component",
+          "id": "MapsView",
+          "name": "sap.ui.core.mvc.View",
+          "options": {
+            "settings": {
+              "viewName": "project1.ext.view.MapsView"
             }
           }
         }
