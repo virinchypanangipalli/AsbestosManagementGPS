@@ -92,6 +92,16 @@
           "pattern": "SiteWithSearchCriteria({key}):?query:",
           "name": "SiteWithSearchCriteriaObjectPage",
           "target": "SiteWithSearchCriteriaObjectPage"
+        },
+        {
+          "pattern": "AsbestosSurvey:?query:",
+          "name": "AsbestosSurveyList",
+          "target": "AsbestosSurveyList"
+        },
+        {
+          "pattern": "AsbestosSurvey({key}):?query:",
+          "name": "AsbestosSurveyObjectPage",
+          "target": "AsbestosSurveyObjectPage"
         }
       ],
       "targets": {
@@ -107,6 +117,11 @@
                 "SiteWithSearchCriteria": {
                   "detail": {
                     "route": "SiteWithSearchCriteriaObjectPage"
+                  }
+                },
+                "AsbestosSurvey": {
+                  "detail": {
+                    "route": "AsbestosSurveyObjectPage"
                   }
                 }
               },
@@ -161,6 +176,49 @@
               "showRelatedApps": false
             }
           }
+        },
+        "AsbestosSurveyList": {
+          "type": "Component",
+          "id": "AsbestosSurveyList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/AsbestosSurvey",
+              "variantManagement": "Page",
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable",
+                    "enableExport": true
+                  }
+                }
+              },
+              "content": {
+                "header": {
+                  "actions": {
+                    "Add": {
+                      "visible": true,
+                      "enabled": true,
+                      "text": "{i18n>add}"
+                    }
+                  }
+                }
+              },
+              "initialLoad": "Enabled"
+            }
+          }
+        },
+        "AsbestosSurveyObjectPage": {
+          "type": "Component",
+          "id": "AsbestosSurveyObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/AsbestosSurvey",
+              "showRelatedApps": false
+            }
+          }
         }
       }
     }
@@ -168,5 +226,8 @@
   "sap.fiori": {
     "registrationIds": [],
     "archeType": "transactional"
+  },
+  "sap.platform.abap": {
+    "uri": "/odata/v4/asbestos/"
   }
 }

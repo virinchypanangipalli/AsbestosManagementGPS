@@ -12,7 +12,7 @@ analysisType : String; // Analysis Type
 application : String; // Application
 areaInSqMeters : Decimal(10,2); // Area in M²
 areasNotAccessed : String; // Areas Not Accessed
-AsbestosSurvey: Composition of many AsbestosSurvey;
+AsbestosSurvey: Composition of many AsbestosSurvey on AsbestosSurvey.up_SiteWithSearchCriteria = $self;
 assessmentDate : DateTime; // Assessment Date
 assetID : String; // Asset ID
 assetOwner : String; // Asset Owner
@@ -38,9 +38,11 @@ fiberType : String; // Fiber Type
 floorLevel : String; // Floor Level
 foyerSignage : Boolean; // Foyer Signage
 friability : String; // Friability
-functionalLocationDesc : String; // Functional Location Description
+    functionalLocationDesc : String; // Functional Location Description
     functionalLocationNo : String; // Functional Location No
-homeNo : String; // Home No
+    functionalLocationLatitude : Decimal(10,8); // Functional Location Latitude (GPS)
+    functionalLocationLongitude : Decimal(10,8); // Functional Location Longitude (GPS)
+    homeNo : String; // Home No
 locationDescription : String; // Location Description
 lotOnPlan : String; // Lot on Plan
 materialCheckbox : Boolean; // Material Checkbox
@@ -169,6 +171,8 @@ entity Site : cuid, managed {  // `cuid` generates a unique key (UUID) and `mana
     // New fields added 
     functionalLocationNo        : String;        // Functional Location No
     functionalLocationDesc      : String;        // Functional Location Description
+    functionalLocationLatitude  : Decimal(10,8); // Functional Location Latitude (GPS)
+    functionalLocationLongitude : Decimal(10,8); // Functional Location Longitude (GPS)
     equipment                  : String;        // Equipment
     equipmentDescription       : String;        // Equipment Description
     surveyNumber               : String;        // Survey Number
@@ -181,6 +185,7 @@ entity Site : cuid, managed {  // `cuid` generates a unique key (UUID) and `mana
  * Asbestos Survey entity.
  */
 entity AsbestosSurvey : cuid, managed {
+    up_SiteWithSearchCriteria : Association to SiteWithSearchCriteria; // Link to parent SiteWithSearchCriteria
     accessibility             : String;            // Accessibility
     activityAndMovement       : String;            // Activity and Movement
     airPlenum                 : Boolean;           // Air Plenum
@@ -198,6 +203,8 @@ entity AsbestosSurvey : cuid, managed {
     foyerSignage              : Boolean;           // Foyer Signage
     friability                : String;            // Friability
     locationDescription       : String;            // Location Description
+    surveyLatitude            : Decimal(10,8);     // Survey Location Latitude (GPS)
+    surveyLongitude           : Decimal(10,8);     // Survey Location Longitude (GPS)
     materialCheckbox          : Boolean;           // Material Checkbox
     materialSignage           : Boolean;           // Material Signage
     noSealed                  : Boolean;           // No Sealed

@@ -41,21 +41,31 @@ annotate service.SiteWithSearchCriteria with @(
             Label : 'Survey Status',
             Criticality : noOfOldSurveys,
         },
-        {
-            $Type : 'UI.DataField',
-            Value : functionalLocationDesc,
-            Label : 'Functional Location Description',
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : equipmentDescription,
-            Label : 'Equipment Description',
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : analysedDate,
-            Label : 'Analysed Date',
-        },
+                    {
+                $Type : 'UI.DataField',
+                Value : functionalLocationDesc,
+                Label : 'Functional Location Description',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : functionalLocationLatitude,
+                Label : 'Functional Location Latitude',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : functionalLocationLongitude,
+                Label : 'Functional Location Longitude',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : equipmentDescription,
+                Label : 'Equipment Description',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : analysedDate,
+                Label : 'Analysed Date',
+            },
     ],
     UI.SelectionFields : [
         functionalLocationNo,
@@ -108,6 +118,16 @@ annotate service.SiteWithSearchCriteria with @(
                 $Type : 'UI.DataField',
                 Value : functionalLocationDesc,
                 Label : 'Functional Location Description',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : functionalLocationLatitude,
+                Label : 'Functional Location Latitude',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : functionalLocationLongitude,
+                Label : 'Functional Location Longitude',
             },
             {
                 $Type : 'UI.DataField',
@@ -268,6 +288,16 @@ annotate service.AsbestosSurvey with @(
             Value : locationDescription,
             Label : 'Location Description',
         },
+        {
+            $Type : 'UI.DataField',
+            Value : surveyLatitude,
+            Label : 'Survey Latitude',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : surveyLongitude,
+            Label : 'Survey Longitude',
+        },
     ],
     UI.FieldGroup #AsbestosSurveyGroup : {
         $Type : 'UI.FieldGroupType',
@@ -316,6 +346,16 @@ annotate service.AsbestosSurvey with @(
                 $Type : 'UI.DataField',
                 Value : locationDescription,
                 Label : 'Location Description',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : surveyLatitude,
+                Label : 'Survey Latitude',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : surveyLongitude,
+                Label : 'Survey Longitude',
             },
             {
                 $Type : 'UI.DataField',
